@@ -1,8 +1,8 @@
-# Hibrido Product Information Module
+# Hibrido Toolbar Product Information Module
 
 ## Description
 
-The Hibrido Product Information module extends the admin interface to include additional fields for managing product information, such as enabling/disabling, customizing colors, and specifying visibility on mobile and desktop devices. It also introduces a toolbar on the product page that remains visible when scrolling down and hides when scrolling back up.
+The Hibrido Toolbar Product Information module extends the admin interface to include additional fields for managing product information, such as enabling/disabling, customizing colors, and specifying visibility on mobile and desktop devices. It also introduces a toolbar on the product page that remains visible when scrolling down and hides when scrolling back up.
 
 ## Features
 
