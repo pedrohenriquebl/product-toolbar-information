@@ -30,6 +30,7 @@ php bin/magento setup:static-content:deploy -f
 
 ## Preview
 ![Preview Image](src/ToolbarPriceInformation/view/frontend/media/preview.png)
+![Preview Image](src/ToolbarPriceInformation/view/frontend/media/preview_admin.png)
 
 ## Contributing
 
