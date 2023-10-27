@@ -1,0 +1,45 @@
+/**
+ * Copyright © Hibrido. All rights reserved.
+ * https://www.hibrido.com.br/
+ */
+
+//
+// Global
+//
+& when (@media-common = true) {
+    #price-information {
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        position: fixed;
+        z-index: 2;
+        left: 15vw;
+        right: 15vw;
+        bottom: 15px;
+
+        .fixed-add-to-cart {
+            align-items: center;
+            padding: 6px 30px;
+            box-shadow: 1px 1px 5px 0 #5c5b5b 94;
+            justify-content: space-between;
+            max-height: 5vw;
+
+            &.active-add-to-cart {
+                display: flex;
+
+                .action.primary.tocart {
+                    border-radius: 8px;
+                    max-width: 250px;
+                    width: 100%;
+                    border: unset;
+                }
+            }
+        }
+
+        &.hideToolbar {
+            display: none;
+        }
+    }
+}

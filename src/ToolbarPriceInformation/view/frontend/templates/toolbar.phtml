@@ -1,0 +1,52 @@
+<?php
+/**
+ * Copyright © Hibrido. All rights reserved.
+ * https://www.hibrido.com.br/
+ */
+
+/** @var \Magento\Catalog\Block\Product\View $block */
+
+$_product = $block->getProduct();
+$productId = $_product->getId();
+$productPriceViewModel = $block->getData('view_model_product_info');
+$productPrice = $productPriceViewModel->getPriceInformation($productId);
+$productPriceEnabled = $productPriceViewModel->isEnabled();
+$backgroundColor = $productPriceViewModel->getBackgroundColor();
+$buttonTextColor = $productPriceViewModel->getButtonTextColor();
+$buttonBackgroundColor = $productPriceViewModel->getButtonBackgroundColor();
+?>
+
+<?php if($productPriceEnabled):?>
+    <div id="price-information" class="fixed-add-to-cart hideToolbar"
+        data-bind="scope: 'scrollPriceInformation'"
+        style="background-color: <?= $backgroundColor ?>; border: 1px solid <?= $buttonTextColor ?>;">
+        <span class="product-name"><?= $_product->getName() ?></span>
+        <span class="product-price"><?= $productPrice; ?></span>
+        <button type="submit"
+                title="<?= /* @escapeNotVerified */ __('Add to Cart') ?>"
+                class="action primary tocart"
+                id="product-addtocart-button"
+                style="background-color: <?= $buttonBackgroundColor ?>;">
+            <span style="color: <?= $buttonTextColor ?>;"><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
+        </button>
+    </div>
+<?php endif;?>
+
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/js/validate-product": {}
+        },
+        "#price-information": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "scrollPriceInformation": {
+                        "component": "Hibrido_ToolbarPriceInformation/js/view/product-scroll-toolbar",
+                        "viewportOnMobile": "<?=  $productPriceViewModel->isVisibleOnMobile() ?>",
+                        "viewportOnDesktop": "<?= $productPriceViewModel->isVisibleOnDesktop() ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>

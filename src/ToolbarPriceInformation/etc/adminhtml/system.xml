@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Hibrido. All rights reserved.
+ * https://www.hibrido.com.br/
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="hb_product_price" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="80">
+            <tab>hibrido</tab>
+            <label>Toolbar Price Information</label>
+            <resource>Hibrido_ProductInformation::product_information</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="settings" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <field id="background_color" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text" canRestore="1">
+                    <label>Background Color</label>
+                </field>
+                <field id="button_text_color" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text" canRestore="1">
+                    <label>Button Text Color</label>
+                </field>
+                <field id="button_background_color" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text" canRestore="1">
+                    <label>Button Background Color</label>
+                </field>
+            </group>
+            <group id="visibility" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Visibility</label>
+                <field id="mobile" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Show in Mobile</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="desktop" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Show in Desktop</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
